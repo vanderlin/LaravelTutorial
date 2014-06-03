@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function() {
-	return 'hello world';
+	return 'hello world - pushed from github';
 });
 
 Route::resource('posts', 'PostsController');
