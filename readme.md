@@ -1,5 +1,5 @@
-### Laravel 101
-This is a fast basic setup for getting [laravel](http://laravel.com/) up and running locally and on a server _(media temple)_.
+# Laravel 101
+This is a basic setup for getting [laravel](http://laravel.com/) up and running locally and on a server _(media temple)_.
 
 ### You need Composer.
 Open up Terminal and see if you have brew installed by typing brew 
@@ -15,15 +15,19 @@ mv composer.phar /usr/local/bin/composer
 now type `composer` and you will see output in terminal.
 
 ### MAMP Server
-Now create a new Laravel project using composer. Move to a directory that MAMP is running in.
-`cd ~/Desktop/`
-`mkdir laravel`
-`cd laravel`
+Now create a new Laravel project using composer. Move to a directory that MAMP is running in.		
+```
+cd ~/Desktop/
+mkdir laravel
+cd laravel
+```
 
 ### Make a new app
 This will take a few minutes the first time you run the command.
-`composer create-project laravel/laravel app`
-`cd app`
+```
+composer create-project laravel/laravel app
+cd app
+```
 
 I love to make things faster so right off the bat you should install [Jeffery Ways Generators](https://github.com/JeffreyWay/Laravel-4-Generators)
 
@@ -44,9 +48,8 @@ server.php
 vendor
 ```
 
-To install other addons open `composer.json`
-You can open the whole director in sublime text by typing. *requires [sublime commands](https://www.sublimetext.com/docs/2/osx_command_line.html) to be installed*
-`subl .`
+To install addons open `app/composer.json`
+You can open the whole directory in sublime text by typing. *requires [sublime commands](https://www.sublimetext.com/docs/2/osx_command_line.html) to be installed* `subl .`
 
 on `line 6:` of `composer.json` you will see `"require"` add  `"way/generators": "dev-master"`
 
@@ -62,13 +65,12 @@ Now update composer.
 `composer update --dev`
 
 >  **Note**:
-You may get this warning `Fatal error: Allowed memory… `You can  fix this in [MAMP Pro](http://www.mamp.info/en/mamp-pro/) by editing the
-`php.ini` file 
-file -> Edit Template -> php -> php 5.5.3 ini
-line 233 change memory_limit to memory_limit = -1
+You may get this warning `Fatal error: Allowed memory… `You can  fix this in [MAMP Pro](http://www.mamp.info/en/mamp-pro/) by editing the `php.ini` 
+File -> Edit Template -> php -> php 5.5.3 ini
+line 233 change memory_limit to `memory_limit = -1`
 
 ### Service Provider
-You need to add the service provider. Open up `app/config/app.php - line 97`. Add the line: `’Way\Generators\GeneratorsServiceProvider’`
+You need to add the service provider. Open up `app/config/app.php` on line 97. Add the line: `’Way\Generators\GeneratorsServiceProvider’`
 
 Now in terminal type `php artisan` and you will see a bunch of helper commands to build your app.
 
@@ -81,7 +83,7 @@ Now visit [http://localhost:8888/](http://localhost:8888/)
 
 ***		
 
-### Now lets start a simple app that inserts data
+# Now lets start a simple app that inserts data
 
 ### MAMP Database
 We need a database. MAMP will hook us up with this, visit.
@@ -118,8 +120,8 @@ add the credentials to `line 55:`
 Now our database is connected to Laravel. Note that this is a local database only, we will later need to change this to our media temple database. 
 
 ### Building a resource
-In terminal we can run a resource command from `Way Generators`  this will make everything we need to build a simple API for to add/delete/update data
-`php artisan generate:resource post --fields="title:string”`
+In terminal we can run a resource command from `Way Generators`  this will make everything we need to build a simple API for to add/delete/update data		
+`php artisan generate:resource post --fields="title:string”`	
 In this line we create a resource called `post` make sure to use the singular version of the resource Laravel will automatticly create the plural. We then add some fields. This can be a comma separated list of [data types](http://laravel.com/docs/schema#adding-columns).
 
 In your `routes.php` you will see 
@@ -253,7 +255,6 @@ You are now logged in to the media temple server via ssh. Move into the new subd
 `cd domains/subdomain.mydomain.com/`
 
 ### Add SSH Key to MediaTemple Server
-
 When logged in to you server via ssh make sure you have a `.shh` folder
 
 Type:
@@ -269,8 +270,8 @@ Create a ssh key on the MediaTemple server
 Print out the ssh key and add it to [Github](https://github.com/settings/ssh).
 `cat  ~/.ssh/github.pub`
  
-Now upload the file via ssh
-`cat id_rsa.pub | ssh serveradmin%yourdomain.com@yourdomain.com 'cat - >> ~/.ssh/github`
+Now upload the file via ssh		
+`cat id_rsa.pub | ssh serveradmin%yourdomain.com@yourdomain.com 'cat - >> ~/.ssh/github`	
 
 You may need to add the `IdentityFile /home/server_number/users/.home/.ssh/github` to your config file.
 
@@ -301,9 +302,9 @@ Now create a symlink.
 
 Now if you visit [http://demoapp.yourdomain.com/](http://demoapp.yourdomain.com/) you should get an error but this is ok. We just need to run `composer update`.
 
-**Need Composer - Media Temple**
+###Need Composer - Media Temple
 First we need to install composer on the MediaTemple Server. 
-Type [via](https://forum.mediatemple.net/topic/6927-here-is-how-to-install-and-use-composer/):
+Type [via](https://forum.mediatemple.net/topic/6927-here-is-how-to-install-and-use-composer/):		
 ```
 curl -s https://getcomposer.org/installer | php -d allow_url_fopen=1 -d suhosin.executor.include.whitelist=phar
 ```
@@ -311,7 +312,7 @@ curl -s https://getcomposer.org/installer | php -d allow_url_fopen=1 -d suhosin.
 ### PHP 5.5.*
 We need php 5.4 or greater for Larvel 4.2. First you need to add it to the sub domain that we create.  You can do this by going to Account Center - Domains -> (you main gs server). Now click on PHP Settings, find your subdomain and select (latest) in the drop down. More info [here](https://kb.mediatemple.net/questions/244/How+can+I+specify+the+PHP+version+on+the+Grid%3F#gs) 
 
-
+### Add Alias to Bash Profile
 Add a alias to our `~/.bash_profile`
 
 `nano ~/.bash_profile`
@@ -370,7 +371,7 @@ This is how to push your changes to the remote server.
 ### Are we connecting 
 You can test this locally because our app is connecting to the external link. 
 
-visit your local instance of the app. [http://localhost:8888/posts](http://localhost:8888/posts) 
+Visit your local instance of the app. [http://localhost:8888/posts](http://localhost:8888/posts) 
 
 ### Error Reporting
 If you are getting an error turn on the debug so we can get a better look at what is going on. In `config/app.php` line 16 set `'debug' => true,`
