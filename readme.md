@@ -7,8 +7,10 @@ Now type composer to see if you have composer installed
 
 ### Install Composer
 
-`curl -sS https://getcomposer.org/installer | php`
-`mv composer.phar /usr/local/bin/composer`
+```
+curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+```
 
 now type `composer` and you will see output in terminal.
 
