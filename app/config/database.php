@@ -60,7 +60,7 @@ return array(
 			'password'  => 'globler99',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
-			'prefix'    => '',
+			'prefix'    => 'laravel_',
 		),
 
 		'pgsql' => array(
