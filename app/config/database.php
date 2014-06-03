@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'external-db.s131103.gridserver.com',
-			'database'  => 'db131103_experiments',
-			'username'  => 'db131103_demo',
-			'password'  => 'monger33',
+			'host'      => 'host',
+			'database'  => 'database',
+			'username'  => 'username',
+			'password'  => 'password',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => 'laravel_',
