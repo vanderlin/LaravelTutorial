@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
-			'database'  => 'app',
-			'username'  => 'root',
-			'password'  => 'root',
+			'host'      => 'external-db.s131103.gridserver.com',
+			'database'  => 'db131103_experiments',
+			'username'  => 'db131103',
+			'password'  => 'globler99',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
