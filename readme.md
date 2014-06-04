@@ -29,7 +29,7 @@ composer create-project laravel/laravel app
 cd app
 ```
 
-# Add Ways Generators
+### Add Ways Generators
 I love to make things faster so right off the bat you should install [Jeffery Ways Generators](https://github.com/JeffreyWay/Laravel-4-Generators)
 
 You can watch a nice video on how this addon can be user [here](https://dl.dropboxusercontent.com/u/774859/Work/Laravel-4-Generators/Get-Started-With-Laravel-Custom-Generators.mp4).
