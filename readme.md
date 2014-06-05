@@ -360,8 +360,8 @@ Update your `config/data.php` file (locally in sublime) It should now look somet
 			'driver'    => 'mysql',
 			'host'      => 'external-db.gridservernumber.gridserver.com',
 			'database'  => 'gridservernumber_databasename’,
-			'username'  => 'username’,
-			'password'  => 'password’,
+			'username'  => 'username',
+			'password'  => 'password',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => 'larvel_’,
@@ -371,7 +371,7 @@ Update your `config/data.php` file (locally in sublime) It should now look somet
 Add your changes to git and push to Github.
 ```
 git add .
-git commit -m ‘edit database to remote’
+git commit -m 'edit database to remote'
 git push
 ```
 
@@ -409,7 +409,7 @@ Add this line of code, make sure you have the small ``` this tells php that it i
 Now add these files like you did before and push to github.
 ```
 git add .
-git commit -m ‘auto pull php file’
+git commit -m 'auto pull php file'
 git push
 ```
 
@@ -422,7 +422,7 @@ Now on your github repo page you need to connect the hook. Click on settings, th
 Test this by changing a file locally like in `app/routes.php` make it say	
 ```
 Route::get('/', function() {
-	return 'hello world - pulled from github webhook’;
+	return 'hello world - pulled from github webhook';
 });
 ```
 
