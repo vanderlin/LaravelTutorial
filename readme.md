@@ -218,6 +218,17 @@ In the `create form` we can add a simple form to submit a delete request.
 	</li> 
 @endforeach
 ```
+### Modifying the Resource
+What if we want to add another field to our resource. Laravel makes this very easy with `migrations`. Lets add another field called `body` to the `Post` model.
+
+In terminal we are going to use another Way Generator to create a migration. Type:
+`php artisan generate:migration add_body_to_posts_table --fields="body:text”`		
+>	Note: The Way Generator `generate:migration` is smart enough to read the keyword `add` from `add_body_to_posts_table` so that in the migration file will add the field. If we typed `create` it would create the table etc.
+
+Now migrate the database.
+`php artisan migrate`		
+
+You can now add another field to your create form like: `Body: {{ Form::text(‘body’); }}`. In your `PostsController` you will need to add the body attribute like: `$post->body = Input::get('body', 'empty body');`
 
 ### Publish to the web - MediaTemple
 This is how to publish your app to mediatemple. Most of the steps will translate to other services but this is a good start.
@@ -416,7 +427,7 @@ Route::get('/', function() {
 Just push the code locally to github and refresh your remote webpage. Everything should be connected. 
 
 
-### More…
+# More…
 This is just a start but there is so much more you can do. Watch tutorials here:
 https://laracasts.com/ 
 http://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers
