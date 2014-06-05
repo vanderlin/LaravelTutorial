@@ -15,7 +15,7 @@ sudo mv composer.phar /usr/local/bin/composer
 
 now type `composer` and you will see output in terminal.
 ```
-  ______
+   ______
   / ____/___  ____ ___  ____  ____  ________  _____
  / /   / __ \/ __ `__ \/ __ \/ __ \/ ___/ _ \/ ___/
 / /___/ /_/ / / / / / / /_/ / /_/ (__  )  __/ /
