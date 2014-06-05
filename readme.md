@@ -6,11 +6,13 @@ Open up Terminal and see if you have brew installed by typing brew
 Now type composer to see if you have composer installed 
 
 ### Install Composer
+You can install [Composer](https://getcomposer.org/) locally or globally. I recommd globally, but this will require `sudo` access. 
 
 ```
 curl -sS https://getcomposer.org/installer | php
-mv composer.phar /usr/local/bin/composer
+sudo mv composer.phar /usr/local/bin/composer
 ```
+
 
 now type `composer` and you will see output in terminal.
 
