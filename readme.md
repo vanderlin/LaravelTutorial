@@ -1,5 +1,8 @@
 # Laravel 101
-This is a basic setup for getting [laravel](http://laravel.com/) up and running locally and on a server _(media temple)_.
+This is a basic setup for getting [laravel](http://laravel.com/) up and running locally and on a server _(media temple)_.	
+Laravel 2.0 requires php 5.4.* If you are using MAMP and get the following mcypt error. Here is a way to fix this [via](http://laravel.io/forum/02-08-2014-difficulty-installing-laravel-getting-error-mcrypt-php-extension-required).	
+In terminal export a new path for php. 	
+`export MAMP_PHP=/Applications/MAMP/bin/php/php5.4.10/bin export PATH="$MAMP_PHP:$PATH"`
 
 ### You need Composer.
 Open up Terminal and see if you have brew installed by typing brew 
