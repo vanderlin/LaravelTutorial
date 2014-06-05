@@ -415,11 +415,11 @@ git push
 
 Now on your github repo page you need to connect the hook. Click on settings, then left hand menu  Webhooks & Services. Click add webhook.
 
-**Under payload URL**: `http://demoapp.youdomain.com/github.php`
-**Sercet**: Leave blank
-**Event**: Just the push event
+**Under payload URL**: `http://demoapp.youdomain.com/github.php`	
+**Sercet**: Leave blank	
+**Event**: Just the push event	
 
-Test this by changing a file locally like in `app/routes.php` make it say
+Test this by changing a file locally like in `app/routes.php` make it say	
 ```
 Route::get('/', function() {
 	return 'hello world - pulled from github webhook’;
@@ -430,12 +430,14 @@ Just push the code locally to github and refresh your remote webpage. Everything
 
 
 # More…
-This is just a start but there is so much more you can do. Watch tutorials here:
-https://laracasts.com/ 
-http://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers
+This is just a start but there is so much more you can do.	
+Watch tutorials here:	
+[https://laracasts.com/](https://laracasts.com/) 	
+[http://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers](http://scotch.io/tutorials/simple-laravel-crud-with-resource-controllers)	
 
-Thanks,
-Todd
+		
+Thanks,	
+Todd	
 
 
 
