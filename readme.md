@@ -53,7 +53,7 @@ we want `php` to point to the version we are running in MAMP lets edit our `.bas
 
 Open MAMP and start the server. Open the startup page and click on [phpinfo](http://localhost:8888/MAMP/index.php?language=English&page=phpinfo). We want to get the path for php. If you look down at the row `Configuration File (php.ini) Path` you will see the path copy the line `/Applications/MAMP/bin/php/php5.5.10` without the `conf`.
 
-*.bash_profile*	
+###.bash_profile	
 Lets see if you have a profile already for your computer. Type this in terminal.	
 `cat ~/.bash_profile`
 
