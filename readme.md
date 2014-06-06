@@ -20,7 +20,7 @@ We can also check the location of php by typing:
 We should get `/usr/bin/php`		
 
 Open `MAMP_MAMP_PRO_3.0.5.pkg` and install MAMP.
-Now open `/Applications/MAMP/MAMP.app` We need PHP 5.4.* to run Laravel. Make sure you have the **latest** version of MAMP. When you open MAMP click on the PHP tab and make sure `5.5.*` is selected. 
+Now open `/Applications/MAMP/MAMP.app` We need PHP 5.4. to run Laravel. Make sure you have the **latest** version of MAMP. When you open MAMP click on the PHP tab and make sure 5.5. is selected. 
 
 Lets create a folder where we will build our Laravel app. Lets just put it on our Desktop.  In Terminal type:		
 ```
@@ -30,7 +30,7 @@ cd laravel
 ```
 
 ### Install Composer
-We need to install [composer](https://getcomposer.org/) to create Laravel apps. In terminal make sure you are inside  `~/Desktop/laravel`.	
+We need to install [composer](https://getcomposer.org/) to create Laravel apps. In terminal make sure you are inside  `~/Desktop/laravel`.		
 ```
 cd ~/Desktop/laravel
 curl -sS https://getcomposer.org/installer | php -d detect_unicode=Off
@@ -73,10 +73,8 @@ Reload bash profile.
 `source ~/.bash_profile`
 	
 Now see what you have for php, type:		
-```
-which php
-``
-You should get.`/Applications/MAMP/bin/php/php5.5.10/bin/php`	
+`which php`	
+You should get.`/Applications/MAMP/bin/php/php5.5.10/bin/php`		
 
 ### Make a new app
 This will take a few minutes the first time you run the command.
