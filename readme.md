@@ -1,22 +1,44 @@
 # Laravel 101
 This is a basic setup for getting [laravel](http://laravel.com/) up and running locally and on a server _(media temple)_.	
-Laravel 2.0 requires php 5.4.* If you are using MAMP and get the following `mcrypt error`. Here is a way to fix this [via](http://laravel.io/forum/02-08-2014-difficulty-installing-laravel-getting-error-mcrypt-php-extension-required).	
-In terminal export a new path for php. 	
-`export MAMP_PHP=/Applications/MAMP/bin/php/php5.4.10/bin export PATH="$MAMP_PHP:$PATH"`
+### Download MAMP
+Download latest version of [MAMP](http://www.mamp.info/en/downloads/) and install it, we need at least php 5.5.*. I recommend MAMP Pro, there are some really nice features like multiple servers and versions of PHP. But for this tutorial we can use the free version of MAMP. 
 
-### You need Composer.
-Open up Terminal and see if you have brew installed by typing brew 
-Now type composer to see if you have composer installed 
+Open Terminal `utilities/terminal.app`	
+
+Lets see what version of PHP we have running type:		
+`php -v`	
+
+If this is a off the shelf mac you will probably get this. 	
+```
+PHP 5.3.26 (cli) (built: Jul  7 2013 19:05:08) 
+Copyright (c) 1997-2013 The PHP Group
+Zend Engine v2.3.0, Copyright (c) 1998-2013 Zend Technologies
+```
+
+We can also check the location of php by typing:		
+`which php`		
+We should get `/usr/bin/php`		
+
+Open `MAMP_MAMP_PRO_3.0.5.pkg` and install MAMP.
+Now open `/Applications/MAMP/MAMP.app` We need PHP 5.4.* to run Laravel. Make sure you have the **latest** version of MAMP. When you open MAMP click on the PHP tab and make sure `5.5.*` is selected. 
+
+Lets create a folder where we will build our Laravel app. Lets just put it on our Desktop.  In Terminal type:		
+```
+cd ~/Desktop
+mkdir laravel
+cd laravel
+```
 
 ### Install Composer
-You can install [Composer](https://getcomposer.org/) locally or globally. I recommd globally, but this will require `sudo` access. 
-
+We need to install [composer](https://getcomposer.org/) to create Laravel apps. In terminal make sure you are inside  `~/Desktop/laravel`.	
 ```
-curl -sS https://getcomposer.org/installer | php
+cd ~/Desktop/laravel
+curl -sS https://getcomposer.org/installer | php -d detect_unicode=Off
 sudo mv composer.phar /usr/local/bin/composer
 ```
+> *Note:* You may need sudo access to `mv`. and if you do not have `detect_unicode=off` you may need to disable them. The above commands handle this.  	
 
-now type `composer` and you will see output in terminal.
+Now lets test to make sure Composer was installed. In terminal type, `composer`. you should get the following output.
 ```
    ______
   / ____/___  ____ ___  ____  ____  ________  _____
@@ -26,13 +48,35 @@ now type `composer` and you will see output in terminal.
                     /_/
 ```
 
-### MAMP Server
-Now create a new Laravel project using composer. Move to a directory that MAMP is running in.		
+### Setup PHP
+we want `php` to point to the version we are running in MAMP lets edit our `.bash_profile` and fix this. 
+
+Open MAMP and start the server. Open the startup page and click on [phpinfo](http://localhost:8888/MAMP/index.php?language=English&page=phpinfo). We want to get the path for php. If you look down at the row `Configuration File (php.ini) Path` you will see the path copy the line `/Applications/MAMP/bin/php/php5.5.10` without the `conf`.
+
+*.bash_profile*	
+Lets see if you have a profile already for your computer. Type this in terminal.	
+`cat ~/.bash_profile`
+
+If you get `No such file or directory` just create a profile.	
+`nano ~/.bash_profile`	
+
+This will open the file in the `vim` editor. Add the following lines at the end of the file. The MAMP_PHP is what you copied from phpinfo plus /bin.		
 ```
-cd ~/Desktop/
-mkdir laravel
-cd laravel
+MAMP_PHP=/Applications/MAMP/bin/php/php5.5.10/bin
+PATH="$MAMP_PHP:$PATH"
 ```
+
+Save the file.			
+Hit ctr+x then y then (enter)
+
+Reload bash profile.		
+`source ~/.bash_profile`
+	
+Now see what you have for php, type:		
+```
+which php
+``
+You should get.`/Applications/MAMP/bin/php/php5.5.10/bin/php`	
 
 ### Make a new app
 This will take a few minutes the first time you run the command.
